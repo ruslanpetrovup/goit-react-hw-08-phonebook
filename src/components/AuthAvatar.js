@@ -1,21 +1,13 @@
 import React from 'react';
+import '../index.css'
 import { connect } from 'react-redux';
 import authSelect from '../redux/Auth/authSelect';
 import authOperations from '../redux/Auth/authOperations'
-const style = {
-    h2: {
-        fontSize: 18,
-        fontWeight: 600
-    },
-    but: {
-        height: 25,
-        marginLeft: 8
-    }
-}
+
 const AuthAvatar = ({name, onLogOut}) => {
     return (
         <>
-            <p style={style.h2}>Welcome, {name}</p><button type="button" onClick={onLogOut} style={style.but}>Logout</button>
+            <p className="titleAvatar">Welcome, {name}</p><button className="buttonLogout" type="button" onClick={onLogOut} >Logout</button>
         </>
     )
 }

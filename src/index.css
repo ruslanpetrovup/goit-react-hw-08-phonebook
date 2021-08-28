@@ -20,6 +20,12 @@ p {
 }
 header {
   padding: 8px;
+  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
 }
 .logo {
   display: flex;
@@ -183,38 +189,46 @@ header {
   display: flex;
   justify-content: center;
 }
-.alertValid {
+.alertValid-enter {
   opacity: 0;
-  width: 283px;
-  user-select: none;
+}
+.alertValid-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+.alertValid-exit {
+  opacity: 1;
+}
+.alertValid-exit-active {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+.alertValid {
   position: absolute;
-  font-weight: 600;
-  color: white;
+  bottom: 10px;
+  left: 50%;
+  padding: 5px 10px;
+  transform: translateX(-50%);
   background: #fb2525;
   text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 105%;
+  color: white;
+  font-weight: 600;
   box-shadow: 0px 0px 8px 3px rgb(34 60 80 / 20%);
-  transition: opacity 300ms linear;
-}
-.isHidden {
-  display: block;
-  opacity: 1;
+  transition: all 300ms linear;
 }
 .containerReg {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-.formReg {
+.formAuth {
   display: flex;
-  width: 400px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
 }
-.labelReg {
+.labelAuth {
   margin: 0 auto;
   position: relative;
 }
@@ -227,4 +241,67 @@ header {
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
+}
+.buttonNav {
+  background-color: #4671d5;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 250ms linear;
+}
+.buttonNavReg {
+  margin-left: 10px;
+  background-color: rgb(73 165 65);
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 250ms linear;
+}
+.buttonNav:hover {
+  color: #4671d5;
+  background-color: #fff;
+  border: 1px solid #4671d5;
+}
+.buttonNavReg:hover {
+  color: rgb(73 165 65);
+  background-color: #fff;
+  border: 1px solid rgb(73 165 65);
+}
+.activeButton {
+  color: #fff;
+  background-color: darkgray;
+  transition: all 250ms linear;
+}
+.buttonCon {
+  margin-left: 10px;
+}
+.buttonLogout {
+  background-color: #d22323;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 250ms linear;
+}
+.buttonLogout:hover {
+  color: #d22323;
+  border: 1px solid #d22323;
+  background-color: #fff;
+}
+.titleAvatar {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
 }

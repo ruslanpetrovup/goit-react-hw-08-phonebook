@@ -1,39 +1,12 @@
 import React from "react";
 import { Component } from "react";
 import { Form, Control } from 'react-bootstrap';
+import '../index.css'
 import { connect } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import operations from '../redux/Auth/authOperations'
 
-
-const style = {
-    container: {
-        width: 1200,
-        marginLeft: "auto",
-        marginRight: "auto",
-    },
-    form: {
-        display: "flex",
-        width: 400,
-        marginLeft: "auto",
-        marginRight: "auto",
-        flexDirection: "column"
-    },
-    labelCon: {
-        margin: "0 auto",
-    },
-    input: {
-        marginBottom: 20
-    },
-    button: {
-        border: "none",
-        background: "none",
-        fontSize: 18,
-        fontWeight: 600,
-        cursor: "pointer"
-    }
-}
 class Login extends Component {
     state = {
         email: '',
@@ -67,13 +40,13 @@ class Login extends Component {
     }
     render() {
       return (
-        <div style={style.container}>
-            <form type="submit" style={style.form} onSubmit={this.submitLogin}>
-                <label style={style.labelCon}>
+        <div>
+            <form type="submit" className="formAuth" onSubmit={this.submitLogin}>
+                <label className="labelAuth">
                       <p>Email</p>
                       <Form.Control type="email" placeholder="Enter email" className="inputAuth" onChange={this.changeValue}/>
                 </label>
-                <label style={style.labelCon}>
+                <label className="labelAuth">
                       <p>Password</p>
                       <Form.Control type="password" placeholder="Password" className="inputAuth" onChange={this.changeValue}/>
                 </label>
