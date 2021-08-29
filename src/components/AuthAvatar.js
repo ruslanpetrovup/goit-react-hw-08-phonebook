@@ -1,5 +1,6 @@
 import React from 'react';
-import '../index.css'
+import '../index.css';
+import avatar from '../images/avatar.jfif'
 import { connect } from 'react-redux';
 import authSelect from '../redux/Auth/authSelect';
 import authOperations from '../redux/Auth/authOperations'
@@ -7,7 +8,7 @@ import authOperations from '../redux/Auth/authOperations'
 const AuthAvatar = ({name, onLogOut}) => {
     return (
         <>
-            <p className="titleAvatar">Welcome, {name}</p><button className="buttonLogout" type="button" onClick={onLogOut} >Logout</button>
+           <img src={avatar} className="imgAvatar"/> <p className="titleAvatar">Welcome, {name}</p><button className="buttonLogout" type="button" onClick={onLogOut} >Logout</button>
         </>
     )
 }
