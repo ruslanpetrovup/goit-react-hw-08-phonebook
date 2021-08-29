@@ -12,12 +12,12 @@ class Contact extends Component {
   }
   render() {
     return <>
-          {this.props.filter.length > 0 ? <TransitionGroup component="ul" classNames="TaskList">
+          {this.props.filter.length > 0 ? <TransitionGroup component="ul" class="TaskList">
         {
                 this.props.filter.map((num) => {
                 return (
-                    <CSSTransition key={num.id} timeout={250}  classNames="TaskList-item">
-                        <li className="TaskList-item" id={num.id}><p>{num.name}</p><p>{num.number}</p>
+                    <CSSTransition key={num.id} timeout={250} classNames="TaskListItem">
+                        <li className="TaskListItem" id={num.id}><p className="titleCon">{num.name}</p><p className="titleCon">{num.number}</p>
                             <button id={num.id} type="button" className="btndel" onClick={this.props.delet}>
                                 Delete
                             </button>
@@ -26,12 +26,12 @@ class Contact extends Component {
                 )
             })
         }
-        </TransitionGroup> : <TransitionGroup component="ul" classNames="TaskList">
+        </TransitionGroup> : <TransitionGroup component="ul" class="TaskList">
         {
                 this.props.contacts.map((num) => {
                 return (
-                    <CSSTransition key={num.id} timeout={250}  classNames="TaskList-item">
-                          <li className="TaskList-item" id={num.id}><p>{num.name}</p><p>{num.number}</p>
+                    <CSSTransition key={num.id} timeout={250} classNames="TaskListItem">
+                          <li className="TaskListItem" id={num.id}><p className="titleCon">{num.name}</p><p className="titleCon">{num.number}</p>
                             <button id={num.id} type="button" className="btndel" onClick={this.props.delet}>
                                 Delete
                             </button>

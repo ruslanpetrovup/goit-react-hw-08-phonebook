@@ -1,4 +1,5 @@
-import React, {Component, lazy,Suspense} from 'react';
+import React, { Component, lazy, Suspense } from 'react';
+import { BoxLoading } from 'react-loadingg';
 import { Route, Switch } from 'react-router-dom';
 import AuthNav from './components/AuthNav';
 import authOperations from './redux/Auth/authOperations';
@@ -20,7 +21,7 @@ class App extends Component {
     return (
       <>
       <AuthNav />
-      <Suspense fallback={<p>Загрузка</p>}>
+      <Suspense fallback={<BoxLoading/>}>
       <Switch>
           <Route path="/" exact component={Home} />
           <PublicRoute path="/register" restricted redirectTo="/contacts" component={Register} />

@@ -55,7 +55,7 @@ const contactsReducer = createReducer(
             }
                 }
                 const filter = state.contacts.filter(num => {
-                return num.valueName.toLowerCase().includes(payload)
+                return num.name.toLowerCase().includes(payload)
                 })
                  return state = {
                 error: false,
