@@ -13,7 +13,7 @@ class Register extends Component {
         email: '',
         password: '',
         error: false,
-        alertSub: 'The password is too short. Password must be at least 7 characters long'
+        alertSub: 'Password minimum 7 characters'
     }
     changeValues = (even) => {
         switch (even.target.type) {
@@ -28,16 +28,6 @@ class Register extends Component {
             })
                 break
             case('password'):
-            if(even.target.value.length < 7){
-                this.setState({
-                error: true
-            })
-            setTimeout(() => {
-                this.setState({
-                error: false
-            })
-            },1000)
-            }
             this.setState({
                 password: even.target.value
             })
@@ -64,11 +54,25 @@ class Register extends Component {
             }, 3000)
             setTimeout(() => {
                 this.setState({
-                alertSub: 'The password is too short. Password must be at least 7 characters long'
+                alertSub: 'Password minimum 7 characters'
             })
             },3500)
             return
         }
+        if (this.state.password.length < 7) {
+
+                this.setState({
+                error: true
+            })
+            setTimeout(() => {
+                this.setState({
+                error: false
+            })
+            }, 3500)
+            return
+        }
+        
+
         this.props.onSubmit(this.state)
         this.setState({
             name: '',email: '',password: ''
@@ -80,21 +84,22 @@ class Register extends Component {
     render() {
         return (
             <div>
-                <CSSTransition in={this.state.error} timeout={500} classNames="alertValid" unmountOnExit>
-                    <span className="alertValid">{this.state.alertSub} </span>
-                </CSSTransition>
             <form type="submit" className="formAuth" onSubmit={this.submitReg}>
                 <label className="labelAuth">
-                        <p>Name</p>
+                        <p className="titleCon">Name</p>
                         <Form.Control type="text" placeholder="Enter name" className="inputAuth" onChange={this.changeValues}/>
                 </label>
                 <label className="labelAuth">
-                    <p>Email</p>
+                    <p className="titleCon">Email</p>
                     <Form.Control type="email" placeholder="Enter email" className="inputAuth" onChange={this.changeValues}/>
                 </label>
                 <label className="labelAuth">
-                    <p>Password</p>
+                        <p className="titleConPass">Password</p>
+                        <CSSTransition in={this.state.error} timeout={3500} classNames="alertValid">
+                    <div className="alertValid">{this.state.alertSub} </div>
+                </CSSTransition>
                     <Form.Control type="password" placeholder="Enter password" className="inputAuth" onChange={this.changeValues}/>
+                    
                 </label>
                 <Button type="submit" variant="secondary" className="buttonAuth">Register</Button>
             </form>

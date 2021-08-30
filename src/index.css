@@ -173,6 +173,11 @@ header {
 .titleCon {
   margin: 0;
   padding: 0;
+  margin-bottom: 20px;
+}
+.titleConPass {
+  margin: 0;
+  padding: 0;
 }
 .btndel {
   border-radius: 4px;
@@ -190,6 +195,22 @@ header {
 #ListContacts {
   display: flex;
 }
+.alertValid {
+  /* position: absolute;
+  bottom: 10px;
+  left: 50%;
+  padding: 5px 10px;
+  transform: translateX(-50%);
+  background: #fb2525;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 0px 8px 3px rgb(34 60 80 / 20%); */
+  opacity: 0;
+  color: red;
+  font-size: 13px;
+  transition: all 500ms linear;
+}
 .alertValid-enter {
   opacity: 0;
 }
@@ -204,19 +225,6 @@ header {
   opacity: 0;
   transition: opacity 500ms linear;
 }
-.alertValid {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  padding: 5px 10px;
-  transform: translateX(-50%);
-  background: #fb2525;
-  text-align: center;
-  color: white;
-  font-weight: 600;
-  box-shadow: 0px 0px 8px 3px rgb(34 60 80 / 20%);
-  transition: all 300ms linear;
-}
 .containerReg {
   width: 1200px;
   margin-left: auto;
@@ -224,14 +232,14 @@ header {
 }
 .formAuth {
   display: flex;
-  max-width: 400px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
 }
 .labelAuth {
   margin: 0 auto;
-  position: relative;
+  width: 100%;
 }
 .inputAuth {
   margin-bottom: 20px;
